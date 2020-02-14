@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Présentation - Intégration et bonnes pratiques avec les CSS</title>
+        <meta charset="utf-8">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,800');
+            @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+        </style>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav>
+            <span>Intégration et bonnes pratiques avec les CSS par <strong>Manon Carbonnel</strong></span>
+            <span style="float: right">2020</span>
+        </nav>
+        <textarea id="source">
+
+        </textarea>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+        <script>
+            var slideshow = remark.create({
+                highlightStyle: 'monokai',
+                highlightLines: true,
+                sourceUrl: 'README.md'
+            });
+        </script>
+    </body>
+</html>

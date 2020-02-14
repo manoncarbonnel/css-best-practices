@@ -1,0 +1,188 @@
+/******************************************************* Global *******************************************************/
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #2d3436;
+}
+
+nav {
+    background-color: #E9EDEE;
+    padding: 1.3rem 6rem;
+    font-size: 0.7rem;
+}
+
+.col {
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+/************************************************** RemarkJS override *************************************************/
+
+/* Full page mode */
+.remark-slide-scaler {
+    height: 94% !important;
+    width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.remark-slide-content {
+    padding: 1em 5em;
+}
+
+/* Each type of page has its own style */
+.remark-slide > .cover {
+    vertical-align: middle;
+}
+
+.remark-slide > .content {
+    padding: 3rem 5em;
+}
+
+/******************************************************* Titles *******************************************************/
+
+.highlight {
+    display: block;
+    width: 10rem;
+    border-bottom: 8px solid #4A2383;
+}
+
+.remark-slide-content h1,
+.remark-slide-content h2,
+.remark-slide-content h3 {
+    font-weight: 800;
+}
+
+.remark-slide-content h1 {
+    font-size: 7rem;
+    margin: 20px 0;
+}
+
+.remark-slide-content h2,
+.remark-slide-content h3 {
+    font-size: 4rem;
+    margin: 20px 0;
+}
+
+.remark-slide-content .subtitle {
+    color: #595959;
+    font-size: 1.5em;
+}
+
+.line {
+    display: block;
+    width: 10rem;
+    height: 2rem;
+}
+
+/******************************************************* Texts ********************************************************/
+
+.strong {
+    font-weight: 600;
+}
+
+.small {
+    font-size: 1.1rem;
+}
+
+.text-muted {
+    color: #595959;
+}
+
+li {
+    margin: 0 0 10px 0;
+    color: #2d3436;
+}
+
+p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+/***************************************************** Code blocks ****************************************************/
+
+.remark-inline-code {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.remark-code {
+    font-family: 'Source Code Pro', monospace;
+    background: #272822;
+    display: inline-block !important;
+    overflow-x: auto;
+    color: white;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.exercice {
+    background: #272822;
+    color: wheat;
+}
+
+/******************************************************* Images *******************************************************/
+
+.image-center > p {
+    text-align: center;
+}
+
+.image-right {
+    float: right;
+    margin-right: 5rem;
+}
+
+.image-resize > p > img {
+    width: 100%;
+}
+
+.image-mini {
+    display: inline-block;
+    margin: 0 10px;
+    height: 7.5rem;
+    width: 7.5rem;
+    vertical-align: middle;
+    position: relative;
+}
+
+.image-mini > p {
+    margin: 0;
+    position: absolute;
+    top: 50%; /* poussé de la moitié de hauteur du référent */
+    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+
+.image-mini > p > img {
+    width: 100%;
+}
+
+.commit-img {
+    display: block;
+    text-align: center;
+}
+
+.commit-img > * {
+    width: 30%;
+}
+
+.img-series {
+    display: block;
+    text-align: center;
+}
+
+/******************************************************* Animate ******************************************************/
+
+.transition {
+    -webkit-animation: fadein 2s;
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
