@@ -1,4 +1,26 @@
-/******************************************************* Global *******************************************************/
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ * RemarkJS.............RemarskJS overrides.
+ * Transitions..........Transitions and animations.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * TRUMPS
+ * Buttons..............Button elements.
+ * Text.................Text helpers.
+ */
+
+
+/*------------------------------------*\
+  # SETTINGS Global
+\*------------------------------------*/
 
 body {
     font-family: 'Raleway', sans-serif;
@@ -11,13 +33,9 @@ nav {
     font-size: 0.7rem;
 }
 
-.col {
-    display: block;
-    width: 50%;
-    float: left;
-}
-
-/************************************************** RemarkJS override *************************************************/
+/*------------------------------------*\
+  # SETTINGS RemarkJS
+\*------------------------------------*/
 
 /* Full page mode */
 .remark-slide-scaler {
@@ -42,7 +60,43 @@ nav {
     padding: 3rem 5em;
 }
 
-/******************************************************* Titles *******************************************************/
+/*------------------------------------*\
+  # SETTINGS Transitions
+\*------------------------------------*/
+
+.transition {
+    -webkit-animation: fadein 2s;
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*------------------------------------*\
+  # OBJECTS Wrappers
+\*------------------------------------*/
+
+.col {
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+.line {
+    display: block;
+    width: 10rem;
+    height: 2rem;
+}
+
+/*------------------------------------*\
+  # BASE Headings
+\*------------------------------------*/
 
 .highlight {
     display: block;
@@ -72,13 +126,9 @@ nav {
     font-size: 1.5em;
 }
 
-.line {
-    display: block;
-    width: 10rem;
-    height: 2rem;
-}
-
-/******************************************************* Texts ********************************************************/
+/*------------------------------------*\
+  # TRUMPS Texts
+\*------------------------------------*/
 
 .strong {
     font-weight: 600;
@@ -101,7 +151,9 @@ p:last-of-type {
     margin-bottom: 2rem;
 }
 
-/***************************************************** Code blocks ****************************************************/
+/*------------------------------------*\
+  # TRUMPS Code blocks
+\*------------------------------------*/
 
 .remark-inline-code {
     font-family: 'Source Code Pro', monospace;
@@ -123,7 +175,9 @@ p:last-of-type {
     color: wheat;
 }
 
-/******************************************************* Images *******************************************************/
+/*------------------------------------*\
+  # TRUMPS Images
+\*------------------------------------*/
 
 .image-center > p {
     text-align: center;
@@ -170,20 +224,4 @@ p:last-of-type {
 .img-series {
     display: block;
     text-align: center;
-}
-
-/******************************************************* Animate ******************************************************/
-
-.transition {
-    -webkit-animation: fadein 2s;
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }

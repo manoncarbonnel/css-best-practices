@@ -30,6 +30,13 @@
   - Architecture physique
   - Framework et task runners
 
+## Construit avec
+
+<img src="https://img.shields.io/badge/css-3-blue" alt="CSS 3">
+<img src="https://img.shields.io/badge/html-5-orange" alt="HTML 5">
+
+[RemarkJS](https://github.com/gnab/remark)
+
 ## Autrice
 
 * **Manon Carbonnel** - [Github](https://github.com/manoncarbonnel)
