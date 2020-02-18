@@ -1,7 +1,9 @@
 # CSS - Bonnes pratiques
 
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-<img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
+![CSS 3](https://img.shields.io/badge/css-3-1C73B9)
+![HTML 5](https://img.shields.io/badge/html-5-E44D25)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org)
+[![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67)](https://gitmoji.carloscuesta.me/)
 
 *Les bonnes pratiques en CSS : organiser proprement l'association HTML 5 et CSS 3*
 
@@ -31,9 +33,6 @@
   - Framework et task runners
 
 ## Construit avec
-
-<img src="https://img.shields.io/badge/css-3-blue" alt="CSS 3">
-<img src="https://img.shields.io/badge/html-5-orange" alt="HTML 5">
 
 [RemarkJS](https://github.com/gnab/remark)
 
