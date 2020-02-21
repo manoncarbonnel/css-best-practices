@@ -197,7 +197,7 @@
 
             class: content
             .highlight[]
-            ## Positionnements
+            ## Positionnements simples
             .subtitle[Position et flottement]
             .line[]
 
@@ -207,26 +207,132 @@
             * relative
             * absolute
             * fixed
-            ]
 
-            .col[
-            Une balise en **position : absolute** se rapporte au **premier parent** ayant une position : **relative**
-            Elle se place toujours, par défaut, à 0px en haut et à gauche
             .line[]
 
             ```css
             .parent {
                 position: relative;
-             }
+            }
 
             .child {
                 position: absolute;
                 top: 10px;
                 left: 50px;
-             }
+            }
             ```
+            ]
+
+            .col[
+            Une balise en **position : absolute** se rapporte au **premier parent** ayant une position : **relative**
 
             Si aucun parent n'est précisé, la balise en position : absolute se rapportera à la balise *html*
+
+            Elle se place toujours, par défaut, à 0 pixel en haut et à gauche
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Positionnements avancés avec Flex
+            .subtitle[Propriétés pour le parent]
+            .line[]
+
+            .col[
+            ```css
+            .container {
+                display: flex; /* ou inline-flex */
+                flex-direction: row;
+                flex-wrap: nowrap; /* ou wrap | wrap-reverse */
+            }
+            ```
+
+            .line[]
+
+            Flex directions :
+            * **row** (default) : gauche à droite
+            * **column** : haut vers bas
+
+            Existent aussi en sens inverse : **row-reverse** & **column-reverse**
+
+            Flex wrap :
+            par défaut tous les éléments passent sur une ligne
+            ]
+
+            .col[
+            .text-center[
+            justify-content
+            ]
+
+            .image-max-height[
+            ![justify-content](https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg)
+            ]
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Positionnements avancés avec Flex
+            .subtitle[Propriétés pour le parent]
+            .line[]
+
+            .col[
+            .text-center[
+            align-items
+            ]
+
+            .image-max-height[
+            ![align-items](https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg)
+            ]
+            ]
+
+            .col[
+            .text-center[
+            align-content
+            ]
+
+            .image-max-height[
+            ![align-content](https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg)
+            ]
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Positionnements avancés avec Flex
+            .subtitle[Propriétés pour les enfants]
+            .line[]
+
+            .col[
+            ```css
+            .item {
+                flex-grow: <number>; /* default 0 */
+                flex-shrink: <number>; /* default 1 */
+                flex-basis: <length> | auto; /* default auto */
+                flex: 0 1 auto; /* tout combiné */
+            }
+            ```
+
+            .image-resize[
+            ![flex-grow](https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg)
+            ]
+            ]
+
+            .col[
+            ```css
+            .item {
+                align-self: flex-start;
+            }
+            ```
+
+            align-self: auto | flex-start | flex-end | center | baseline | stretch;
+
+            .image-resize[
+            ![align-self](https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg)
+            ]
             ]
 
             ---
@@ -288,7 +394,8 @@
             * 1 seul h1
             * 2 ou 3 h2
             * n h3
-            * h4
+            * n h4
+            * ...
 
             ---
 
@@ -509,7 +616,7 @@
 
             * Travailler le style de façon modulaire
 
-            * Penser *mobile first*
+            * Penser *mobile first* pour les sites publics
 
             ---
 

@@ -15,10 +15,10 @@
   - Positionnements (simples et avancés avec Flex)
   - Tailles
   - Marges
-  - Hiérarchie et référencement
+  - Hiérarchie des titres et référencement
   
 - Bonnes pratiques
-  - Hiérarchie du DOM
+  - Structure : Hiérarchie du DOM
   - Conventions de nommage
   
 - Mauvaises pratiques

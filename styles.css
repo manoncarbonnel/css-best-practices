@@ -142,6 +142,10 @@ nav {
     color: #595959;
 }
 
+.text-center {
+    text-align: center;
+}
+
 li {
     margin: 0 0 10px 0;
     color: #2d3436;
@@ -189,7 +193,11 @@ p:last-of-type {
 }
 
 .image-resize > p > img {
-    width: 100%;
+    width: 95%;
+}
+
+.image-max-height > p > img {
+    max-height: 50vh;
 }
 
 .image-mini {
