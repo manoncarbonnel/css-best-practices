@@ -321,6 +321,29 @@
             ]
             ]
 
+            ---
+
+            class: content
+            .highlight[]
+            ## Positionnements avancés avec Flex
+            .subtitle[Propriétés pour les enfants]
+            .line[]
+
+            .col[
+            ```css
+            .item {
+                flex-grow: <number>; /* default 0 */
+                flex-shrink: <number>; /* default 1 */
+                flex-basis: <length> | auto; /* default auto */
+                flex: 0 1 auto; /* tout combiné */
+            }
+            ```
+
+            .image-resize[
+            ![flex-grow](https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg)
+            ]
+            ]
+
             .col[
             ```css
             .item {
@@ -373,6 +396,44 @@
 
             .image-right[
             ![Computed box](https://tutorial.techaltum.com/images/css-boxmodel.png)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Pseudo
+            .subtitle[Classes & éléments]
+            .line[]
+
+            .col[
+
+            ```css
+            elem:hover,
+            elem:active {
+              color: grey;
+            }
+
+            ui li:first-child {
+              background-color: grey;
+            }
+            ```
+
+            ```css
+            p::first-line {
+              color: blue;
+            }
+            ```
+
+            .image-resize[
+            ![Pseudo éléments ex 1](https://rjdesignz.com/wp-content/uploads/2017/08/2.png)
+            ]
+            ]
+
+            .col[
+            .image-max-height[
+            ![Pseudo éléments](https://i0.wp.com/css-tricks.com/wp-content/uploads/2011/06/multiplecanvases.jpg)
+            ]
             ]
 
             ---
