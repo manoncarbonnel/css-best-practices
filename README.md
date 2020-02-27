@@ -15,6 +15,7 @@
   - Positionnements (simples et avancés avec Flex)
   - Tailles
   - Marges
+  - Pseudo classes et pseudo éléments
   - Hiérarchie des titres et référencement
   
 - Bonnes pratiques
