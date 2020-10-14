@@ -3,7 +3,7 @@
  *
  * SETTINGS
  * Global...............Globally-available variables and config.
- * RemarkJS.............RemarskJS overrides.
+ * RemarkJS.............RemarkJS overrides.
  * Transitions..........Transitions and animations.
  *
  * OBJECTS
@@ -17,6 +17,8 @@
  * Text.................Text helpers.
  */
 
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
 
 /*------------------------------------*\
   # SETTINGS Global
@@ -31,6 +33,10 @@ nav {
     background-color: #E9EDEE;
     padding: 1.3rem 6rem;
     font-size: 0.7rem;
+}
+
+nav span:last-child {
+    float: right
 }
 
 /*------------------------------------*\

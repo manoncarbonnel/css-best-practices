@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Presentation - Integration and best practices with CSS</title>
+        <title>Présentation - Intégration et bonnes pratiques avec les CSS</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="../styles.css" />
     </head>
     <body>
         <nav>
-            <span>Presentation - Integration and best practices with CSS by <strong>Manon Carbonnel</strong></span>
-            <span>2020</span>
+            <span>Intégration et bonnes pratiques avec les CSS par <strong>Manon Carbonnel</strong></span>
+            <span style="float: right">2020</span>
         </nav>
         <textarea id="source">
             class: cover
 
             .highlight[]
-            # Integration
-            .subtitle[Best practices in CSS: organize the association HTML 5 and CSS 3 the clean way]
+            # Intégration
+            .subtitle[Les bonnes pratiques en CSS : organiser proprement l'association HTML 5 et CSS 3]
             .line[]
 
             .image-center[
@@ -26,12 +26,12 @@
 
             class: content
             .highlight[]
-            ## Some reminders
+            ## Quelques rappels
             .line[]
 
-            The HTML language allows you to build the **structure** of a template.
+            Le langage HTML permet de construire la **structure** d'un template.
 
-            The CSS *Cascading Style Sheets* language focuses on **styling** these elements.
+            Le langage CSS *Cascading Style Sheets* permet de **styliser** ces éléments.
 
             .line[]
 
@@ -41,28 +41,29 @@
 
             ---
 
+
             class: content
             .highlight[]
-            ## Priorities
-            .subtitle[Cascading concept]
+            ## Priorités
+            .subtitle[Notion de cascade]
             .line[]
 
             .col[
-            The closer the CSS code is to the HTML tag, the more it has priority.
+            Plus le code css est près de la balise HTML, plus il est prioritaire.
 
-            1. Style attribute
+            1. Directive style
             ```html
             <p style=""></p>
             ```
 
-            2. Style tag
+            2. Balise style
             ```html
             <style>
                     /* code */
             </style>
             ```
 
-            3. In a .css file loaded via the link tag in the head
+            3. Dans un fichier .css chargé via la balise link dans le head
             ```html
             <head>
                     <link rel="stylesheet" href="style.css" />
@@ -74,26 +75,26 @@
 
             class: content
             .highlight[]
-            ## Priorities
-            .subtitle[Cascading concept]
+            ## Priorités
+            .subtitle[Notion de cascade]
             .line[]
 
             .col[
-            The closer the CSS code is to the HTML tag, the more it has priority.
+            Plus le code css est près de la balise HTML, plus il est prioritaire.
 
-            1. Style attribute
+            1. Directive style
             ```html
             <p style=""></p>
             ```
 
-            2. Style tag
+            2. Balise style
             ```html
             <style>
                     /* code */
             </style>
             ```
 
-            3. In a .css file loaded via the link tag in the head
+            3. Dans un fichier .css chargé via la balise link dans le head
             ```html
             <head>
                     <link rel="stylesheet" href="style.css" />
@@ -102,9 +103,9 @@
             ]
 
             .col[
-            The code loaded last takes priority.
+            Le code chargé en dernier prend la priorité.
 
-            The id has the highest priority level, then it's the class and then the tag.
+            L'id a le niveau de priorité le plus fort, ensuite c'est la classe puis la balise.
 
             ```css
             p {
@@ -129,30 +130,30 @@
 
             class: content
             .highlight[]
-            ## Basic selectors
-            .subtitle[Browsing the DOM]
+            ## Sélecteurs simples
+            .subtitle[Naviguer dans le DOM]
             .line[]
 
             .col[
-            An element containing two classes
+            Un élément contenant deux classes
             ```css
             .class1.class2 { }
             .class1&.class2 { }
             ```
 
-            One element contained in another
+            Un élément contenu dans un autre
             ```css
             .elem1 .elem2 { }
             ```
 
-            Direct children (only) of an element
+            Enfants directs (uniquement) d'un élément
             ```css
             .class1 > .class2 { }
             ```
             ]
 
             .col[
-            Element according to state
+            Élément selon statut
             ```css
             a:hover { }
             input[type=radio]:checked { }
@@ -163,22 +164,22 @@
 
             class: content
             .highlight[]
-            ## Advanced selectors
-            .subtitle[Browsing the DOM]
+            ## Sélecteurs avancés
+            .subtitle[Naviguer dans le DOM]
             .line[]
 
-            The adjacent selector to act on the next element
+            Le sélecteur adjacent pour agir sur l'élément suivant
             ```css
             .class1 + .class2 { }
             .class1 ~ .class2 { }
             ```
 
-            Elements not having a specific class
+            Éléments n'ayant pas une classe
             ```css
             .class1:not(class2) { }
             ```
 
-            Target an element using its index
+            Cibler un élement par son index
             ```css
             li:first-child { }
 
@@ -192,12 +193,12 @@
 
             class: content
             .highlight[]
-            ## Basic positioning
-            .subtitle[Positioning and floating]
+            ## Positionnements simples
+            .subtitle[Position et flottement]
             .line[]
 
             .col[
-            There are 3 types of positioning:
+            Il y a 3 types de positionnement :
 
             * relative
             * absolute
@@ -219,19 +220,19 @@
             ]
 
             .col[
-            A tag in **position: absolute** refers to the **first parent** having a **position: relative**
+            Une balise en **position : absolute** se rapporte au **premier parent** ayant une position : **relative**
 
-            If no parent is specified, the tag in absolute position will refer to the *html* tag
+            Si aucun parent n'est précisé, la balise en position : absolute se rapportera à la balise *html*
 
-            It is always placed, by default, at 0 pixels at the top left of the parent
+            Elle se place toujours, par défaut, à 0 pixel en haut et à gauche
             ]
 
             ---
 
             class: content
             .highlight[]
-            ## Advanced positioning with Flex
-            .subtitle[Properties for the parent]
+            ## Positionnements avancés avec Flex
+            .subtitle[Propriétés pour le parent]
             .line[]
 
             .col[
@@ -245,14 +246,14 @@
 
             .line[]
 
-            Flex directions:
-            * **row** (default) : left to right
-            * **column** : top to bottom
+            Flex directions :
+            * **row** (default) : gauche à droite
+            * **column** : haut vers bas
 
-            Also exist in reverse: **row-reverse** & **column-reverse**
+            Existent aussi en sens inverse : **row-reverse** & **column-reverse**
 
             Flex wrap :
-            by default all the elements pass on a line
+            par défaut tous les éléments passent sur une ligne
             ]
 
             .col[
@@ -269,8 +270,8 @@
 
             class: content
             .highlight[]
-            ## Advanced positioning with Flex
-            .subtitle[Properties for the parent]
+            ## Positionnements avancés avec Flex
+            .subtitle[Propriétés pour le parent]
             .line[]
 
             .col[
@@ -297,8 +298,8 @@
 
             class: content
             .highlight[]
-            ## Advanced positioning with Flex
-            .subtitle[Properties for the children]
+            ## Positionnements avancés avec Flex
+            .subtitle[Propriétés pour les enfants]
             .line[]
 
             .col[
@@ -307,7 +308,7 @@
                 flex-grow: <number>; /* default 0 */
                 flex-shrink: <number>; /* default 1 */
                 flex-basis: <length> | auto; /* default auto */
-                flex: 0 1 auto; /* all combined */
+                flex: 0 1 auto; /* tout combiné */
             }
             ```
 
@@ -320,8 +321,8 @@
 
             class: content
             .highlight[]
-            ## Advanced positioning with Flex
-            .subtitle[Properties for the children]
+            ## Positionnements avancés avec Flex
+            .subtitle[Propriétés pour les enfants]
             .line[]
 
             .col[
@@ -330,7 +331,7 @@
                 flex-grow: <number>; /* default 0 */
                 flex-shrink: <number>; /* default 1 */
                 flex-basis: <length> | auto; /* default auto */
-                flex: 0 1 auto; /* all combined */
+                flex: 0 1 auto; /* tout combiné */
             }
             ```
 
@@ -357,36 +358,36 @@
 
             class: content
             .highlight[]
-            ## Sizes
+            ## Tailles
             .subtitle[px, rem, vh, % ???]
             .line[]
 
             * **px** : Pixel
-            * **%** : Percentage
+            * **%** : Pourcentage
 
 
-            * **vh** : "Viewport height" - 1vh = 1% of the window height
-            * **vw** : "Viewport width" - 1vw = 1% of the window width
+            * **vh** : "Viewport height" - 1vh = 1% de la hauteur de la fenêtre
+            * **vw** : "Viewport width" - 1vw = 1% de la largeur de la fenêtre
 
 
-            * **em** : Size proportional to that of the parent of the current element
-            * **rem** : "Root em" size proportional to that of the root element of the document (*html* tag)
+            * **em** : Taille proportionnelle à celle du parent de l'élément courant
+            * **rem** : "Root em" taille proportionnelle à celle de l'élément racine du document (balise *html*)
 
 
             .line[]
-            *Unlike the values in em, the value in rem is constant throughout the document.*
+            *Contrairement aux valeurs en em, la valeur en rem est constante tout au long du document.*
 
             ---
 
             class: content
             .highlight[]
-            ## Margins
-            .subtitle[Interior and outer margins]
+            ## Marges
+            .subtitle[Intérieures, extérieures]
             .line[]
 
-            * Margin : outer margins
+            * Margin : marges extérieures
 
-            * Padding : interior margins
+            * Padding : marges intérieures
 
 
             .image-right[
@@ -398,7 +399,7 @@
             class: content
             .highlight[]
             ## Pseudo
-            .subtitle[Classes & elements]
+            .subtitle[Classes & éléments]
             .line[]
 
             .col[
@@ -421,13 +422,13 @@
             ```
 
             .image-resize[
-            ![Pseudo elements ex 1](https://rjdesignz.com/wp-content/uploads/2017/08/2.png)
+            ![Pseudo éléments ex 1](https://rjdesignz.com/wp-content/uploads/2017/08/2.png)
             ]
             ]
 
             .col[
             .image-max-height[
-            ![Pseudo elements](https://i0.wp.com/css-tricks.com/wp-content/uploads/2011/06/multiplecanvases.jpg)
+            ![Pseudo éléments](https://i0.wp.com/css-tricks.com/wp-content/uploads/2011/06/multiplecanvases.jpg)
             ]
             ]
 
@@ -435,20 +436,20 @@
 
             class: content
             .highlight[]
-            ## Title levels
+            ## Niveaux de titres
             .line[]
 
             .image-right[
             ![SEO Titles](https://qph.fs.quoracdn.net/main-qimg-d9389403ab1cc626cf27ed3b966dff38)
             ]
 
-            Title type tags are there to declare the type of an item.
+            Les balises de type titre sont là pour déclarer le type d'un élément.
 
-            They promote natural referencing.
+            Elles favorisent le référencement naturel.
 
-            Organization:
-            * Only one h1
-            * 2 or 3 h2
+            Organisation :
+            * 1 seul h1
+            * 2 ou 3 h2
             * n h3
             * n h4
             * ...
@@ -457,7 +458,7 @@
 
             class: content
             .highlight[]
-            ## Best practices
+            ## Bonnes pratiques
             .line[]
 
             .image-center[
@@ -469,7 +470,7 @@
             class: content
             .highlight[]
             ## Structure
-            .subtitle[Respect the HTML5 hierarchy]
+            .subtitle[Respecter la hiérarchie HTML5]
             .line[]
 
             .image-right[
@@ -477,29 +478,29 @@
             ]
 
 
-            .small[Especially when using a frontend framework.]
+            .small[Notamment lors de l'utilisation d'un framework frontend.]
 
             .line[]
 
-            A *div* is a container, **block element** *display: block;*
+            Une *div* est un conteneur, **élément de bloc** *display: block;*
 
-            A *p* paragraph is a **block element** for text *display: block;*
+            Un paragraphe *p* est un **élément de bloc** destiné a du texte *display: block;*
 
-            A *span* is a **inline container** *display: inline;*
+            Un *span* est un **conteneur en ligne** *display: inline;*
 
             ---
 
             class: content
             .highlight[]
-            ## Naming
-            .subtitle[Use an explicit convention]
+            ## Nommage
+            .subtitle[Utiliser une convention explicite]
             .line[]
 
             .image-right[
             ![BEM](https://blogeduonix-2f3a.kxcdn.com/wp-content/uploads/2018/08/bem.jpeg)
             ]
 
-            For example, the *BEM* methodology:
+            Par exemple, la méthodologie *BEM* :
 
             ```css
             .block__element--modifier {
@@ -509,17 +510,17 @@
 
             .line[]
 
-            **Why ?**
+            **Pourquoi ?**
 
-            * Modularity
-            * Re-usability
+            * Modularité
+            * Réutilisabilité
             * Structure
 
             ---
 
             class: content
             .highlight[]
-            ## Bad practices
+            ## Mauvaises pratiques
             .subtitle[]
             .line[]
 
@@ -531,74 +532,74 @@
 
             class: content
             .highlight[]
-            ## Mix roles
-            .subtitle[Use html tags for styling]
+            ## Mélanger les rôles
+            .subtitle[Utiliser les balises html pour styliser]
             .line[]
 
-            For example, to make an element stand out:
+            Par exemple, pour faire ressortir un élément :
             ```html
-            <h2>My text</h2>
+            <h2>Mon texte</h2>
             ```
 
-            instead of:
+            au lieu de
             ```html
-            <strong>My text</strong>
-            or
-            <span class="text-strong">My text</span>
+            <strong>Mon texte</strong>
+            ou
+            <span class="text-strong">Mon texte</span>
             ```
 
             .line[]
-            **Why ?**
+            **Pourquoi ?**
 
-            HTML is a declarative language that must be structured and consistent.
+            Le HTML est un langage déclaratif qui doit être structuré et cohérent.
 
-            It is not designed for styling.
+            Il n'est pas fait pour mettre en forme.
 
-            A consistent HTML structure is essential for good SEO.
+            Une structure HTML cohérente est indispensable pour un bon référencement.
 
             ---
 
             class: content
             .highlight[]
-            ## Naming
-            .subtitle[Multiply css classes]
+            ## Nommage
+            .subtitle[Multiplier les classes css]
             .line[]
 
-            For example :
+            Par exemple :
 
             ```html
-            <p class="text-blue text-center padding-15">My text</p>
+            <p class="text-blue text-center padding-15">Mon texte</p>
             ```
 
-            because it's almost like putting the CSS in the HTML file:
+            parce que ça revient quasiment à mettre le css dans le fichier html :
 
             ```html
-            <p style="color: blue; text-align: center; padding: 15px;">My text</p>
+            <p style="color: blue; text-align: center; padding: 15px;">Mon texte</p>
             ```
 
             .line[]
-            **Why ?**
+            **Pourquoi ?**
 
-            What we want is to save time and not search everywhere to make our modifications.
+            Ce que l'on veut c'est gagner du temps et ne pas chercher partout où faire nos modifiations.
 
-            So all the styling must be located in the same place: separate CSS files.
+            Donc il faut que toute la mise en forme soit située au même endroit : fichiers CSS séparés.
 
             ---
 
             class: content
             .highlight[]
-            ## Forced overload
-            .subtitle[Put !important everywhere]
+            ## Surcharge forcée
+            .subtitle[Mettre des !important partout]
             .line[]
 
-            For example:
+            Par exemple :
             ```css
             .link {
                 color: black !important;
             }
             ```
 
-            instead of:
+            au lieu de
             ```css
             .navbar .link {
                 color: black;
@@ -606,72 +607,72 @@
             ```
 
             .line[]
-            **Why ?**
+            **Pourquoi ?**
 
-            Specifying the parent architecture of the component (path) offers overload possibilities.
+            Préciser l'architecture parente du composant offre des possibilités de surcharge.
 
-            The keyword !important should be used exceptionally.
+            Le mot clé !important doit être utilisé de manière exceptionnelle.
 
             ---
 
             class: content
             .highlight[]
-            ## Bad cutting
-            .subtitle[Put block type tags inside inline type tags]
+            ## Mauvais découpage
+            .subtitle[Mettre des balises de type bloc dans des balises de type inline]
             .line[]
 
-            For example:
+            Par exemple :
             ```html
             <span>
                 <img src="#"/>
-                <div>My text</div>
+                <div>Mon texte</div>
             </span>
             ```
 
-            instead of:
+            au lieu de :
             ```html
             <div>
                 <img src="#"/>
-                <p>My text</p>
+                <p>Mon texte</p>
             </div>
             ```
 
             .line[]
-            **Why ?**
+            **Pourquoi ?**
 
-            The DOM hierarchy must be respected (SEO).
+            Il faut respecter la hiérarchie du DOM (référencement).
 
-            To avoid unexpected behavior in CSS.
+            Evite les comportements innatendus en CSS.
 
             ---
 
             class: content
             .highlight[]
-            ## Advices
+            ## Conseils
             .line[]
 
             .image-center[
-            ![Advices](https://media0.giphy.com/media/AFTWK5Qo22V2g/giphy.gif)
+            ![Conseils](https://media0.giphy.com/media/AFTWK5Qo22V2g/giphy.gif)
             ]
 
             ---
 
             class: content
             .highlight[]
-            ## Organization
-            .subtitle[Organize around a graphical prototype]
+            ## Organisation
+            .subtitle[S'organiser autour d'une maquette]
             .line[]
 
             .col[
-            * Identify what is common to all screens
+            * Identifier ce qui est commun à tous les écrans
 
-            * Visually cut each screen into blocks / grids
+            * Découper visuellement chaque écran en blocs / grilles
 
-            * Work the style in a modular (component oriented) way
+            * Travailler le style de façon modulaire
 
-            * Think *mobile first* for public sites
+            * Penser *mobile first* pour les sites publics
 
-            * Add summaries in your stylesheets
+            * Ajouter des sommaires dans vos feuilles de style
             ]
 
             .col[
@@ -709,28 +710,28 @@
 
             class: content
             .highlight[]
-            ## Split CSS code
-            .subtitle[From the global to the specific]
+            ## Découper le code CSS
+            .subtitle[Partir du global vers du spécifique]
             .line[]
 
-            1. Identify the **main variables** of the graphic prototype / style guides (colors, fonts, sizes)
+            1. Identifier les **principales variables** de la charte graphique (couleurs, polices, tailles)
 
-            2. Create a dedicated file for **recurring elements** (forms, menus, buttons)
+            2. Créer un fichier dédié pour les **éléments récurrents** (formulaires, menus, boutons)
 
-            3. Create a global CSS file for the **layout** (common components) of the application (variables, header, nav, footer, etc.)
+            3. Créer un fichier css global pour le **layout** (composants communs) de l'application (variables, header, nav, footer, etc)
 
-            4. Create a dedicated file by **component**, which will include style additions and overloads on the elements
+            4. Créer un fichier dédié par **composant**, qui comporteras ajouts et surcharges de style sur les éléments.
 
             ---
 
             class: content
             .highlight[]
-            ## Use a Framework
-            .subtitle[and a dynamic language with a task runner]
+            ## Utiliser un Framework
+            .subtitle[et un langage dynamique avec un task runner]
             .line[]
 
             .col[
-            * Use a framework like **Bootstrap**, **Materialize** or **Bulma** ...
+            * Utiliser un framework comme **Bootstrap**, **Materialize** ou encore **Bulma**...
 
             .line[]
             .line[]
@@ -747,9 +748,9 @@
             ]
 
             .col[
-            * Use dynamic language like **SASS** or **LESS**
+            * Utiliser un langage dynamique comme **SASS** ou **LESS**
 
-            * Use a task runner like **Webpack** to *minify* and *uglify* the outputs
+            * Utiliser un task runner comme **Webpack** pour *minifier* et *uglifier* les sorties
 
             .line[]
 
@@ -767,8 +768,8 @@
 
             class: content
             .highlight[]
-            ## Additional resources
-            .subtitle[for the thirst for knowledge!]
+            ## Ressources supplémentaires
+            .subtitle[pour la soif de savoir !]
             .line[]
 
             .col[
@@ -809,8 +810,8 @@
             class: content
 
             .highlight[]
-            # And There you go !
-            .subtitle[Now you have all the keys to get the job done o/]
+            # Et voilà !
+            .subtitle[Maintenant vous avez toutes les clés pour travailler o/]
             .line[]
 
             .image-center[
@@ -821,7 +822,7 @@
             class: cover
 
             .highlight[]
-            # Thanks !
+            # Merci !
             .line[]
             .line[]
 

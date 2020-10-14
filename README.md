@@ -1,42 +1,44 @@
-# CSS - Bonnes pratiques
+# CSS - Best practices
 
 ![CSS 3](https://img.shields.io/badge/css-3-1C73B9)
 ![HTML 5](https://img.shields.io/badge/html-5-E44D25)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67)](https://gitmoji.carloscuesta.me/)
 
-*Les bonnes pratiques en CSS : organiser proprement l'association HTML 5 et CSS 3*
+*Best practices in CSS: organize the association HTML 5 and CSS 3 the clean way*
 
-**Sommaire**
+**Summary**
 
-- Quelques rappels
-  - Priorités
-  - Sélecteurs (simples et avancés)
-  - Positionnements (simples et avancés avec Flex)
-  - Tailles
-  - Marges
-  - Pseudo classes et pseudo éléments
-  - Hiérarchie des titres et référencement
+- Some reminders
+  - Priorities
+  - Selectors (basic and advanced)
+  - Positioning (basic and advanced with Flex)
+  - Sizes
+  - Margins
+  - Pseudo classes and pseudo elements
+  - Hierarchy of titles and referencing
   
-- Bonnes pratiques
-  - Structure : Hiérarchie du DOM
-  - Conventions de nommage
+- Best practices
+  - Structure: DOM hierarchy
+  - Naming conventions
   
-- Mauvaises pratiques
-  - Rôles
-  - Nommage
-  - Surcharge
-  - Découpage
+- Bad practices
+  - Roles
+  - Naming
+  - Overload
+  - Cutting
   
-- Conseils
-  - Organisation autour d'une maquette
-  - Architecture physique
-  - Framework et task runners
+- Advices
+  - Organization around a graphical prototype
+  - Physical architecture
+  - Framework and task runners
+  
+- Additional resources
 
-## Construit avec
+## Build with
 
 [RemarkJS](https://github.com/gnab/remark)
 
-## Autrice
+## Author
 
 * **Manon Carbonnel** - [Github](https://github.com/manoncarbonnel)
