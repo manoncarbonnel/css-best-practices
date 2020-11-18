@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Presentation - Integration and best practices with preprocessors and frontend frameworks</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../styles.css"/>
+    </head>
+    <body>
+        <nav>
+            <span>Presentation - Integration and best practices with preprocessors and frontend frameworks by <strong>Manon Carbonnel</strong></span>
+            <span>2020</span>
+        </nav>
+        <textarea id="source">
+            class: cover
+            .highlight[]
+            # Integration
+            .subtitle[Best practices in CSS: Integration with preprocessors and frontend frameworks]
+            .line[]
+
+            .image-center[
+            ![CSS HTML](https://pixees.fr/wp-content/uploads/2015/11/david_roche_dr_12-300x300.png)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Some reminders
+            .subtitle[CSS with superpowers]
+            .line[]
+
+            Preprocessors are backwards-compatible language extensions for CSS.
+
+            They only make a few convenient additions to the CSS language, which is one of the reasons it can be learned so quickly.
+
+            .image-mini[
+            ![LESS](https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LESS_Logo.svg/800px-LESS_Logo.svg.png)
+            ]
+            Leaner Style Sheets
+
+            .image-mini[
+            ![SASS](https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg)
+            ]
+            Syntactically Awesome Style Sheets
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Nesting
+            .subtitle[Hierarchy and scopes]
+            .line[]
+
+            .col[
+            When writing HTML you've probably noticed that it has a clear nested and visual hierarchy.
+
+            CSS, on the other hand, doesn't:
+
+            ```css
+            nav ul {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+            }
+
+            nav li {
+              display: inline-block;
+            }
+
+            nav a {
+              display: block;
+              padding: 6px 12px;
+              text-decoration: none;
+            }
+            ```
+            ]
+
+            .col[
+
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Nesting
+            .subtitle[Hierarchy and scopes]
+            .line[]
+
+            .col[
+            When writing HTML you've probably noticed that it has a clear nested and visual hierarchy.
+
+            CSS, on the other hand, doesn't:
+
+            ```css
+            nav ul {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+            }
+
+            nav li {
+              display: inline-block;
+            }
+
+            nav a {
+              display: block;
+              padding: 6px 12px;
+              text-decoration: none;
+            }
+            ```
+            ]
+
+            .col[
+            Preprocessors will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.
+
+            *Overly nested rules is considered bad practice.*
+
+            ```scss
+            // SCSS or LESS
+
+            nav {
+              ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+              }
+
+              li {
+                display: inline-block;
+              }
+
+              a {
+                display: block;
+                padding: 6px 12px;
+                text-decoration: none;
+              }
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Variables
+            .subtitle[Reusability]
+            .line[]
+
+            .col[
+            It's not uncommon to see the same value repeated dozens if not hundreds of times across your stylesheets:
+
+            ```css
+            .link {
+              color: #428bca;
+            }
+
+            .widget {
+              color: #fff;
+              background: #428bca;
+            }
+            ```
+            ]
+
+            .col[
+
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Variables
+            .subtitle[Reusable]
+            .line[]
+
+            .col[
+            It's not uncommon to see the same value repeated dozens if not hundreds of times across your stylesheets:
+
+            ```css
+            .link {
+              color: #428bca;
+            }
+
+            .widget {
+              color: #fff;
+              background: #428bca;
+            }
+            ```
+            ]
+
+            .col[
+            Variables make your code easier to maintain by giving you a way to control those values from a single location.
+
+            You can store things like colors, font stacks, or any CSS value you think you'll want to reuse.
+
+            .col[
+            ```less
+            // LESS
+
+            @sea-blue:      #428bca;
+
+            .link {
+              color: @sea-blue;
+            }
+
+            .widget {
+              color: #fff;
+              background: @sea-blue;
+            }
+            ```
+            ]
+
+            .col[
+            ```scss
+            // SCSS
+
+            $sea-blue:      #428bca;
+
+            .link {
+              color: $sea-blue;
+            }
+
+            .widget {
+              color: #fff;
+              background: $sea-blue;
+            }
+            ```
+            ]
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Variables
+            .subtitle[Parent selectors]
+            .line[]
+
+            .col[
+            The `&` operator represents the parent selectors of a nested rule:
+
+            ```less
+            // SCSS or LESS
+
+            a {
+              color: blue;
+
+              &:hover {
+                color: green;
+              }
+            }
+            ```
+            ]
+
+            .col[
+
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Variables
+            .subtitle[Parent selectors]
+            .line[]
+
+            .col[
+            The & operator represents the parent selectors of a nested rule:
+
+            ```less
+            // SCSS or LESS
+
+            a {
+              color: blue;
+
+              &:hover {
+                color: green;
+              }
+            }
+            ```
+            ]
+
+            .col[
+            It also works with class names and helps managing *scopes*:
+
+            ```less
+            // SCSS or LESS
+
+            .navbar {
+              color: blue;
+
+              &-button { // output : .navbar-button in CSS
+                color: green;
+              }
+            }
+            ```
+
+            Really cool when using naming conventions such as BEM.
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Partials
+            .subtitle[Make it modular]
+            .line[]
+
+            A partial is a Sass or Less file named with a leading underscore.
+            You might name it something like `_partial.scss` or `_partial.less`.
+
+            The underscore lets the preprocessor know that the file is only a partial file and that it should not be generated into a CSS file.
+
+            Partials are used with the **@import** rule.
+
+            ```scss
+            // LESS or SCSS
+
+            @import "partial"; // No need to include the file extension
+            ```
+
+            .line[]
+
+            **In SASS, the @import rule is going to be, slowly but surely, deprecated and replaced with the @use rule.
+            It is still used in frontend frameworks though.**
+
+            You can use the sass-migrator tool and module migration to help you update your code [https://sass-lang.com/documentation/cli/migrator](https://sass-lang.com/documentation/cli/migrator).
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Sass Modules
+            .subtitle[Make it modular]
+            .line[]
+
+            A module is like a partial with a namespace added to it.
+
+            Sass modules are also used with the **@use** rule.
+
+            ```scss
+            // _module.scss
+
+            $primary-color: #333;
+            ```
+
+            ```scss
+            // SCSS
+
+            @use 'module';
+
+            .inverse {
+              background-color: module.$primary-color;
+              color: white;
+            }
+            ```
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Mixins
+            .subtitle["mix-in" properties from existing styles]
+            .line[]
+
+            A mixin lets you make groups of CSS declarations that you want to **reuse** throughout your stylesheets.
+
+            You can even pass in values to make your mixin more flexible.
+
+            *A good use of a mixin is for *vendor prefixes* (non standard or experimental rules), but I prefer using an autoprefixer*
+
+            .col[
+            ```scss
+            // SCSS
+
+            @mixin transform($property) {
+              -webkit-transform: $property;
+              -ms-transform: $property;
+              transform: $property;
+            }
+
+            .box {
+                @include transform(rotate(30deg));
+            }
+            ```
+            ]
+
+            .col[
+            ```css
+            /* CSS */
+
+            .box {
+              -webkit-transform: rotate(30deg);
+              -ms-transform: rotate(30deg);
+              transform: rotate(30deg);
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Mixins
+            .subtitle[Use a rule as a mixin]
+            .line[]
+
+            .col[
+            ```less
+            // LESS
+
+            .my-mixin {
+              color: black;
+            }
+
+            .my-other-mixin() {
+              background: white;
+            }
+
+            .class {
+              .my-mixin();
+              .my-other-mixin();
+            }
+            ```
+            ]
+
+            .col[
+            ```css
+            /* CSS */
+
+            .my-mixin {
+              color: black;
+            }
+
+            .class {
+              color: black;
+              background: white;
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Less functions
+            .subtitle[Use a function inside a rule]
+            .line[]
+
+            Less offers you many built-in functions to use in your stylesheets.
+
+            I do not use a lot of them, except for the color operations. They all require the same parameters :
+
+            * `color`: A color object.
+            * `amount`: A percentage 0-100%.
+            * `method`: Optional, set to relative for the adjustment to be relative to the current value.
+
+            .line[]
+
+            .col[
+            ```less
+            // LESS
+
+            .elem:hover {
+
+                color: saturate(#80e619, 20%);
+
+
+                color: desaturate(#80e619, 20%);
+
+
+                color: lighten(#80e619, 20%);
+
+
+                color: darken(#80e619, 20%);
+            }
+            ```
+            ]
+
+            .col[
+
+            .line[]
+
+            .image-mini-block[
+            ![saturated](../../images/less-saturated-color.png)
+            ]
+
+            .image-mini-block[
+            ![desaturated](../../images/less-desaturated-color.png)
+            ]
+
+            .image-mini-block[
+            ![lighten](../../images/less-lighten-color.png)
+            ]
+
+            .image-mini-block[
+            ![darken](../../images/less-darken-color.png)
+            ]
+
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Code quality
+            .subtitle[]
+            .line[]
+
+            .image-center[
+            ![Code quality](https://media.giphy.com/media/hXDrTueJWAscK3xWQ2/giphy.gif)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Code quality
+            .subtitle[Linters and post-processors]
+            .line[]
+
+            .col[
+            [Stylelint](https://github.com/stylelint/stylelint) is a linter that helps you avoid errors and enforce conventions in your stylesheets.
+
+            You can configure it to work in your favorite Jetbrains IDE.
+
+            Voir le [README.md](../../../quality-tools-tutorials/stylelint/README.md).
+
+            .line[]
+            .line[]
+            .line[]
+            .line[]
+
+            .image-mini[
+            ![Stylelint](https://s3.amazonaws.com/media-p.slid.es/uploads/467124/images/2872758/stylelint-icon-black.svg)
+            ]
+            ]
+
+            .col[
+            [PostCSS](https://github.com/postcss/postcss) is a tool for transforming styles with JS plugins.
+
+            It offers more than 200 plugins, here are a few nice ones:
+            - [autoprefixer](https://github.com/postcss/autoprefixer) (automatically ads vendor prefixes to your rules)
+            - [stylelint](https://github.com/stylelint/stylelint) (a modular stylesheet linter).
+            - [doiuse](https://github.com/anandthakker/doiuse) (lints CSS for browser support).
+
+            See the PostCSS [README.md](../../../quality-tools-tutorials/post-css/README.md).
+
+            .image-mini[
+            ![PostCSS](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/PostCSS_Logo.svg/778px-PostCSS_Logo.svg.png)
+            ]
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Source maps
+            .subtitle[Identify the source of a rule]
+            .line[]
+
+            A **source map** is a special file that connects a minified/uglified version of an asset (CSS or JS) to the original authored version.
+
+            Very useful to debug CSS rules.
+
+            But should you use them in **production environment** ? It's up to you because, they are quite lightweight.
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Compilation
+            .subtitle[]
+            .line[]
+
+            .image-center[
+            ![Code quality](https://media.giphy.com/media/VhXKWqghv1kvbKBnwH/giphy.gif)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Command line usage
+            .subtitle[Build-in commands]
+            .line[]
+
+            You can compile your `.scss` ou `.less` files using the command line build in tools.
+
+            .col[
+            .image-mini[
+            ![LESS](https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LESS_Logo.svg/800px-LESS_Logo.svg.png)
+            ]
+
+            The binary included, `bin/lessc`, works with NodeJS.
+
+            It offers a simple but limited [build command](http://lesscss.org/usage/#command-line-usage-command-line-usage),
+            and a [watch configuration](http://lesscss.org/usage/#using-less-in-the-browser-watch-mode):
+
+            ```shell-script
+            $ lessc bootstrap.less bootstrap.css
+            ```
+
+            It has a source maps option :
+
+            ```shell-script
+            $ lessc bootstrap.less bootstrap.css --source-map
+            ```
+            ]
+
+
+            .col[
+            .image-mini[
+            ![SASS](https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg)
+            ]
+
+            This preprocessor offers a richer [Dart Sass executable](https://sass-lang.com/documentation/cli/dart-sass) with different modes:
+
+            ```shell-script
+            $ sass style.scss:style.css
+            $ sass light.scss:light.css dark.scss:dark.css
+            $ sass themes:public/css
+            ```
+
+            And offers a `watch` command line:
+
+            ```shell-script
+            $ sass --watch themes:public/css
+            ```
+
+            It also has more options like compression and source maps options:
+
+            ```shell-script
+            $ sass --style=compressed style.scss:style.min.css
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Task runners
+            .subtitle[IDE integration]
+            .line[]
+
+            Jetbrains' IDE offer compilation tools and watchers for preprocessors.
+
+            It uses the preprocessor's built-in command line tools.
+
+            See the SASS [README.md](../../../quality-tools-tutorials/sass/README.md#file-watchers) and LESS [README.md](../../../quality-tools-tutorials/less/README.md#file-watchers).
+
+            .line[]
+
+            .image-mini[
+            ![Jetbrains logo](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/1200px-JetBrains_Logo_2016.svg.png)
+            ]
+            .image-mini[
+            ![WebStorm logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/WebStorm.png/1200px-WebStorm.png)
+            ]
+            .image-mini[
+            ![PHPStorm logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Phpstorm.png/1200px-Phpstorm.png)
+            ]
+            .image-mini[
+            ![PyCharm logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/PyCharm_Logo.svg/1200px-PyCharm_Logo.svg.png)
+            ]
+            .image-mini[
+            ![IntelliJ logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/IntelliJ_IDEA_Logo.svg/1200px-IntelliJ_IDEA_Logo.svg.png)
+            ]
+            .image-mini[
+            ![CLion logo](https://resources.jetbrains.com/storage/products/clion/img/meta/clion_logo_300x300.png)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Task runners
+            .subtitle[Webpack]
+            .line[]
+
+            You also can use external task runner programs to compile your stylesheets.
+
+            A good example is [Webpack](https://webpack.js.org/) because it also optimizes `.js` and image files.
+
+            .line[]
+
+            This task runner support [styling loaders](https://webpack.js.org/loaders/#styling) dedicated to SASS and LESS, but also code quality ones such as PostCSS.
+
+            See the WebPack [README.md](../../../quality-tools-tutorials/webpack/README.md).
+
+            .line[]
+
+            .image-mini[
+            ![Webpack logo](https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Frontend frameworks
+            .subtitle[]
+            .line[]
+
+            .image-center[
+            ![Frontend frameworks](https://media.giphy.com/media/UrbnbuU24p1zgyDMUH/giphy.gif)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Frontend frameworks
+            .subtitle[]
+            .line[]
+
+            .col[
+            I strongly advise you to use a frontend framework like **Bootstrap**, **Materialize** or **Bulma** ...
+
+            They contain CSS and JS prepacked components.
+
+            .line[]
+            .line[]
+
+            .image-mini[
+            ![Bootstrap](https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png)
+            ]
+            .image-mini[
+            ![Materialize](https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png)
+            ]
+            .image-mini[
+            ![Bulma](https://bulma.io/images/bulma-logo.png)
+            ]
+            ]
+
+            .col[
+            Install them using a package manager like **NPM**, **Yarn**...
+
+            Version and share only your configuration files for building the project.
+
+            .line[]
+            .line[]
+
+            .image-mini[
+            ![NPM](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1200px-Npm-logo.svg.png)
+            ]
+            .image-mini[
+            ![Yarn](data:image/png;base64,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)
+            ]
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Frontend frameworks
+            .subtitle[]
+            .line[]
+
+            Once you installed the framework, look at its stylesheets architecture.
+
+            **Try to respect the same one in your project stylesheets.**
+
+            .col[
+            For example, **Bootstrap** uses Sass:
+
+            .image-max-height[
+            ![Bootstrap architecture](../../images/bootstrap_architecture.png)
+            ]
+            ]
+
+            .col[
+            Architecture of my project:
+
+            .image-max-height[
+            ![Project architecture](../../images/project_architecture.png)
+            ]
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Frontend frameworks
+            .subtitle[]
+            .line[]
+
+            There is two ways you can load the framework stylesheets in your project.
+
+            **1** You can charge its dist minified file separately from your project main CSS:
+
+            ```html
+            <head>
+                <!-- Bootstrap framework stylesheet -->
+                <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <!-- Core theme CSS -->
+                <link href="scss/dist/css/theme.min.css" rel="stylesheet"/>
+            </head>
+            ```
+
+            .line[]
+
+            **2** Or you can `@import` it in your main `theme.scss` entrypoint file and load the framework's .scss entry point file.
+
+            Either the whole framework stylesheets *or* the variables and any component stylesheet you might need, allowing you to **override** as needed.
+
+            .col[
+            ```html
+            <head>
+                <!-- Core theme CSS (includes Bootstrap) -->
+                <link href="scss/dist/css/theme.min.css" rel="stylesheet"/>
+            </head>
+            ```
+            ]
+
+            .col[
+            ```scss
+            /* Libraries */
+            @import '../node_modules/bootstrap/scss/bootstrap';
+
+            /* Custom variables */
+            @use 'variables';
+
+            /* Components */
+            @use 'components/badges';
+            @use 'components/buttons';
+            @use 'components/cards';
+            @use 'components/forms';
+
+            /* Global */
+            @use 'layout';
+            ```
+            ]
+
+            ---
+
+            class: cover
+            .highlight[]
+            # Thanks !
+            .line[]
+            .line[]
+
+            .image-center[
+            ![And that's how its done.](https://media.giphy.com/media/Rhf0uSWt1P2TFqVMZK/giphy.gif)
+            ]
+        </textarea>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+        <script>
+            let slideshow = remark.create({
+                highlightStyle: 'monokai',
+                highlightLines: true,
+                // sourceUrl: 'README.md'
+            });
+        </script>
+    </body>
+</html>

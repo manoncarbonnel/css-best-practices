@@ -3,7 +3,7 @@
     <head>
         <title>Presentation - Integration and best practices with CSS</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="../styles.css" />
     </head>
     <body>
         <nav>
@@ -457,6 +457,248 @@
 
             class: content
             .highlight[]
+            ## Transitions
+            .line[]
+
+            CSS transitions allows you to change property values smoothly, over a given duration.
+
+            .col[
+            Here are the available rules for CSS transitions:
+            - transition
+            - transition-delay
+            - transition-duration
+            - transition-property
+            - transition-timing-function
+            ]
+
+            .col[
+            Example:
+
+            ```html
+            <div></div>
+            ```
+
+            ```css
+            div {
+              width: 100px;
+              height: 100px;
+
+              transition-property: width;
+              transition-duration: 2s;
+              transition-timing-function: linear;
+              transition-delay: 1s;
+              /* or */
+              transition: width 2s linear 1s;
+            }
+
+            div:hover {
+              width: 300px;
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Animations
+            .line[]
+
+            CSS allows animation of HTML elements gradually change from one style to another, without using JavaScript.
+
+            You can change as many CSS properties you want, as many times you want.
+
+            To use CSS animation, you must first specify some **keyframes** for the animation.
+
+            Keyframes hold what styles the element will have at certain times.
+
+            .col[
+            Here are the available rules for CSS animations:
+            - @keyframes
+            - animation
+            - animation-name
+            - animation-duration
+            - animation-delay
+            - animation-iteration-count
+            - animation-direction
+            - animation-timing-function
+            - animation-fill-mode
+            ]
+
+            .col[
+            Example:
+
+            ```html
+            <div></div>
+            ```
+
+            ```css
+            div {
+              background-color: red;
+              animation-name: example;
+              animation-duration: 4s;
+            }
+
+            @keyframes example {
+              from  { background-color: red; }
+              to    { background-color: yellow; }
+
+              /* or */
+              0%   { background-color: red; }
+              25%  { background-color: yellow; }
+              50%  { background-color: blue; }
+              100% { background-color: green; }
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Animations
+            .line[]
+
+            CSS allows animation of HTML elements gradually change from one style to another, without using JavaScript.
+
+            You can change as many CSS properties you want, as many times you want.
+
+            To use CSS animation, you must first specify some **keyframes** for the animation.
+
+            Keyframes hold what styles the element will have at certain times.
+
+            .col[
+            Here are the available rules for CSS animations:
+            - @keyframes
+            - animation
+            - animation-name
+            - animation-duration
+            - animation-delay
+            - animation-iteration-count
+            - animation-direction
+            - animation-timing-function
+            - animation-fill-mode
+            ]
+
+            .col[
+            Other example:
+
+            ```html
+            <div></div>
+            ```
+
+            ```css
+            div {
+                animation-name: example;
+                animation-duration: 5s;
+                animation-timing-function: linear;
+                animation-delay: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+
+                /* or */
+                animation: example 5s linear 2s infinite alternate;
+            }
+
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Parallax
+            .line[]
+
+            **Parallax** scrolling is an effect where the background content (i.e. an image) is moved at a different speed than the foreground content while scrolling.
+
+            The effect can be vertical and/or horizontal, but let's focus on the vertical (the most used one), which requires CSS only.
+
+            .line[]
+
+            See a [demo with parallax scrolling](https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm) and a [demo without it](https://www.w3schools.com/howto/tryhow_css_parallax_demo_none.htm).
+
+            You can create mind blowing parallax effects using additionnal JavaScript libraries.
+
+            .col[
+            ```html
+            <body>
+                <div class="block"></div>
+                <div class="parallax"></div>
+                <div class="block"></div>
+            </body>
+            ```
+            ]
+
+            .col[
+            ```css
+            p {
+              height:500px;
+            }
+
+            .parallax {
+              /* The image used */
+              background-image: url("my_image.jpg");
+
+              /* Set a specific height */
+              min-height: 500px;
+
+              /* Create the parallax scrolling effect */
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Responsive design
+            .line[]
+
+            Responsive web design makes your web page look good on all devices, whether from a computer, a tablet or a smartphone.
+
+            Responsive web design uses only HTML and CSS using **media queries**.
+
+            Most frontend framework now use a grid system with standard device widths called **breakpoints** for you to specify your CSS rules.
+
+            .col[
+            ```html
+            <head>
+                <!-- Give the browser instructions about the page's dimensions and scaling. -->
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
+            ```
+            ]
+
+            .col[
+            ```css
+            /* Bootstrap frontend framework breakpoints */
+
+            /* Extra small devices (portrait phones) */
+            @media screen and (max-width: 575px) { /* code */ }
+
+            /* Small devices (landscape phones) */
+            @media screen and (max-width: 767px) { /* code */ }
+
+            /* Medium devices (tablets) */
+            @media screen and (max-width: 991px) { /* code */ }
+
+            /* Large devices (desktops) */
+            @media screen and (max-width: 1199px) { /* code */ }
+
+            /* Extra large devices (large desktops) */
+            @media screen and (min-width: 1200px) { /* code */ }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
             ## Best practices
             .line[]
 
@@ -514,6 +756,18 @@
             * Modularity
             * Re-usability
             * Structure
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Think mobile first
+            .subtitle[Optimize your responsive design]
+            .line[]
+
+            Because most users consult websites via their smartphone.
+
+            Start your design with the smartphone template and style, and work your way up to large devices.
 
             ---
 
@@ -826,7 +1080,7 @@
             .line[]
 
             .image-center[
-            ![](https://media2.giphy.com/media/Gf3fU0qPtI6uk/giphy.gif?cid=3640f6095bfff1227977333345721c64)
+            ![Chandler dancing](https://media2.giphy.com/media/Gf3fU0qPtI6uk/giphy.gif?cid=3640f6095bfff1227977333345721c64)
             ]
         </textarea>
         <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

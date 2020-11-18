@@ -10,7 +10,15 @@
 
 *Best practices in CSS: organize the association HTML 5 and CSS 3 the clean way*
 
-In this repository you will find :
+This training is available in two languages :
 
-- [Quality tools tutorials](quality-tools-tutorials/README.md)
-- [A training in two parts](training/en/README.md)
+- [English](en/README.md)
+- [French](fr/README.md)
+
+## Build with
+
+[RemarkJS](https://github.com/gnab/remark)
+
+## Author
+
+* **Manon Carbonnel** - [Github](https://github.com/manoncarbonnel)

@@ -45,7 +45,7 @@ nav span:last-child {
 
 /* Full page mode */
 .remark-slide-scaler {
-    height: 94% !important;
+    height: 95% !important;
     width: 100% !important;
     left: 0 !important;
     top: 0 !important;
@@ -206,13 +206,22 @@ p:last-of-type {
     max-height: 50vh;
 }
 
-.image-mini {
-    display: inline-block;
+.image-mini,
+.image-mini-block {
     margin: 0 10px;
-    height: 7.5rem;
-    width: 7.5rem;
     vertical-align: middle;
     position: relative;
+}
+
+.image-mini {
+    display: inline-block;
+    height: 7.5rem;
+    width: 7.5rem;
+}
+
+.image-mini-block {
+    height: 2.7rem;
+    width: 5rem;
 }
 
 .image-mini > p {
@@ -224,18 +233,4 @@ p:last-of-type {
 
 .image-mini > p > img {
     width: 100%;
-}
-
-.commit-img {
-    display: block;
-    text-align: center;
-}
-
-.commit-img > * {
-    width: 30%;
-}
-
-.img-series {
-    display: block;
-    text-align: center;
 }

@@ -458,6 +458,248 @@
 
             class: content
             .highlight[]
+            ## Transitions / animations
+            .line[]
+
+            Les transitions CSS vous permettent de modifier les valeurs de propriétés en douceur, sur une durée donnée.
+
+            .col [
+            Voici les règles disponibles pour les transitions CSS:
+            - transition
+            - transition-delay
+            - transition-duration
+            - transition-property
+            - transition-timing-function
+            ]
+
+            .col[
+            Exemple :
+
+            ```html
+            <div></div>
+            ```
+
+            ```css
+            div {
+              width: 100px;
+              height: 100px;
+
+              transition-property: width;
+              transition-duration: 2s;
+              transition-timing-function: linear;
+              transition-delay: 1s;
+              /* or */
+              transition: width 2s linear 1s;
+            }
+
+            div:hover {
+              width: 300px;
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Animations
+            .line[]
+
+            CSS permet l'animation d'éléments HTML qui changent progressivement d'un style à un autre, sans utiliser JavaScript.
+
+            Vous pouvez modifier autant de propriétés CSS que vous le souhaitez, autant de fois que vous le souhaitez.
+
+            Pour utiliser une animation CSS, vous devez d'abord spécifier des **keyframes** pour l'animation.
+
+            Les keyframes contiennent les styles que l'élément aura à certains moments.
+
+            .col[
+            Voici les règles disponibles pour les animations CSS :
+            - @keyframes
+            - animation
+            - animation-name
+            - animation-duration
+            - animation-delay
+            - animation-iteration-count
+            - animation-direction
+            - animation-timing-function
+            - animation-fill-mode
+            ]
+
+            .col[
+            Example:
+
+            ```html
+            <div></div>
+            ```
+
+            ```css
+            div {
+              background-color: red;
+              animation-name: example;
+              animation-duration: 4s;
+            }
+
+            @keyframes example {
+              from  { background-color: red; }
+              to    { background-color: yellow; }
+
+              /* or */
+              0%   { background-color: red; }
+              25%  { background-color: yellow; }
+              50%  { background-color: blue; }
+              100% { background-color: green; }
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Animations
+            .line[]
+
+            CSS permet l'animation d'éléments HTML qui changent progressivement d'un style à un autre, sans utiliser JavaScript.
+
+            Vous pouvez modifier autant de propriétés CSS que vous le souhaitez, autant de fois que vous le souhaitez.
+
+            Pour utiliser une animation CSS, vous devez d'abord spécifier des **keyframes** pour l'animation.
+
+            Les keyframes contiennent les styles que l'élément aura à certains moments.
+
+            .col[
+            Voici les règles disponibles pour les animations CSS :
+            - @keyframes
+            - animation
+            - animation-name
+            - animation-duration
+            - animation-delay
+            - animation-iteration-count
+            - animation-direction
+            - animation-timing-function
+            - animation-fill-mode
+            ]
+
+            .col[
+            Autre exemple:
+
+            ```html
+            <div></div>
+            ```
+
+            ```css
+            div {
+                animation-name: example;
+                animation-duration: 5s;
+                animation-timing-function: linear;
+                animation-delay: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+
+                /* or */
+                animation: example 5s linear 2s infinite alternate;
+            }
+
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Parallax
+            .line[]
+
+            Le défilement **parallaxe** est un effet où le contenu d'arrière-plan (c'est-à-dire une image) est déplacé à une vitesse différente de celle du contenu de premier plan lors du défilement.
+
+            L'effet peut être vertical et/ou horizontal, mais concentrons-nous sur le vertical (le plus utilisé), qui ne nécessite que du CSS.
+
+            .line[]
+
+            Voir une [démo avec défilement parallaxe](https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm) et une [démo sans](https://www.w3schools.com/howto/tryhow_css_parallax_demo_none.htm).
+
+            Vous pouvez créer des effets de parallaxe époustouflants en utilisant des librairies JavaScript supplémentaires.
+
+            .col[
+            ```html
+            <body>
+                <div class="block"></div>
+                <div class="parallax"></div>
+                <div class="block"></div>
+            </body>
+            ```
+            ]
+
+            .col[
+            ```css
+            p {
+              height:500px;
+            }
+
+            .parallax {
+              /* The image used */
+              background-image: url("my_image.jpg");
+
+              /* Set a specific height */
+              min-height: 500px;
+
+              /* Create the parallax scrolling effect */
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Responsive design
+            .line[]
+
+            Le responsive design donne à votre page Web une belle apparence sur tous types d'appareils, que ce soit à partir d'un ordinateur, d'une tablette ou d'un smartphone.
+
+            Le responsive design utilise uniquement HTML et CSS à l'aide de **media queries**.
+
+            La plupart des frameworks frontend utilisent maintenant un système de grille avec des largeurs standard appelées **breakpoints** pour vous permettre de spécifier des règles CSS par appareil.
+
+            .col[
+            ```html
+            <head>
+                <!-- Give the browser instructions about the page's dimensions and scaling. -->
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
+            ```
+            ]
+
+            .col[
+            ```css
+            /* Bootstrap frontend framework breakpoints */
+
+            /* Extra small devices (portrait phones) */
+            @media screen and (max-width: 575px) { /* code */ }
+
+            /* Small devices (landscape phones) */
+            @media screen and (max-width: 767px) { /* code */ }
+
+            /* Medium devices (tablets) */
+            @media screen and (max-width: 991px) { /* code */ }
+
+            /* Large devices (desktops) */
+            @media screen and (max-width: 1199px) { /* code */ }
+
+            /* Extra large devices (large desktops) */
+            @media screen and (min-width: 1200px) { /* code */ }
+            ```
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
             ## Bonnes pratiques
             .line[]
 
@@ -515,6 +757,18 @@
             * Modularité
             * Réutilisabilité
             * Structure
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Penser mobile d'abord
+            .subtitle[Optimiser votre responsive design]
+            .line[]
+
+            Parce que la plupart des utilisateurs consultent les sites Web via leur smartphone.
+
+            Commencez votre conception avec le modèle et le style du smartphone, et progressez vers les grands appareils.
 
             ---
 
