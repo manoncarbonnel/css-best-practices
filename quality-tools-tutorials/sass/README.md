@@ -33,7 +33,7 @@ Use [NVM for Windows](https://github.com/coreybutler/nvm-windows) instead of reg
 
 Install Sass with its basic configuration:
 
-``` shell
+``` shell script
 npm install -g sass
 ```
 

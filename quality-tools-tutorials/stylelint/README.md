@@ -33,7 +33,7 @@ Use [NVM for Windows](https://github.com/coreybutler/nvm-windows) instead of reg
 
 Install Stylelint with its standard configuration base:
 
-``` shell
+``` shell script
 npm install -g stylelint stylelint-config-standard
 ```
 
@@ -88,7 +88,6 @@ Example `.stylelintrc.json`:
     "selector-max-id": 2
   }
 }
-
 ```
 
 ### WebStorm
@@ -111,11 +110,11 @@ Open the `Settings/Preferences` dialog, go to `Editor > Inspection > CSS > Code 
 To get started right away with sensible defaults:
 
 ```shell script
-npx stylelint {source_file_or_directory_with_pattern}
+stylelint {source_file_or_directory_with_pattern}
 ```
 
 To automatically fix problems, run:
 
 ```shell script
-npx stylelint --fix {source_file_or_directory_with_pattern}
+stylelint --fix {source_file_or_directory_with_pattern}
 ```

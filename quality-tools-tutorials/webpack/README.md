@@ -30,10 +30,38 @@ Use [NVM for Windows](https://github.com/coreybutler/nvm-windows) instead of reg
 
 Install Webpack on your project directory:
 
-``` shell
+``` shell script
 npm install --save-dev webpack
 ```
 
 ## Configuration
 
-<!-- TODO -->
+### From a file
+
+Example `webpack.config.js`:
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            }
+          },
+          {
+            loader: 'postcss-loader'
+          }
+        ]
+      }
+    ]
+  }
+}
