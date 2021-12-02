@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Presentation - Integration and best practices with CSS</title>
+        <title>Presentation - Web integration and best practices with CSS</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../styles.css" />
     </head>
     <body>
-        <nav>
-            <span>Presentation - Integration and best practices with CSS by <strong>Manon Carbonnel</strong></span>
-            <span>2020</span>
-        </nav>
         <textarea id="source">
+            layout: true
+            <nav>
+                <span>Web integration and best practices with CSS by <strong>Manon Carbonnel</strong></span>
+                <span style="float: right">2020</span>
+            </nav>
+
+            ---
+
             class: cover
 
             .highlight[]
-            # Integration
+            # Web integration
             .subtitle[Best practices in CSS: organize the association HTML 5 and CSS 3 the clean way]
             .line[]
 
@@ -106,6 +110,7 @@
 
             The id has the highest priority level, then it's the class and then the tag.
 
+            .col[
             ```css
             p {
                 color: red;
@@ -123,6 +128,28 @@
                 color: black;
             }
             ```
+            ]
+
+            .col[
+            ```css
+            p {
+                color: red;
+            }
+
+            p {
+                color: blue;
+            }
+
+            .text-muted {
+                color: grey;
+            }
+
+            #id {
+                color: black;
+            }
+            ```
+            ]
+
             ]
 
             ---
@@ -472,6 +499,8 @@
             ]
 
             .col[
+
+            .col[
             Example:
 
             ```html
@@ -495,6 +524,7 @@
               width: 300px;
             }
             ```
+            ]
             ]
 
             ---
@@ -526,12 +556,16 @@
             ]
 
             .col[
+
+            .col[
             Example:
 
             ```html
             <div></div>
             ```
+            ]
 
+            .col[
             ```css
             div {
               background-color: red;
@@ -550,6 +584,7 @@
               100% { background-color: green; }
             }
             ```
+            ]
             ]
 
             ---
@@ -614,8 +649,6 @@
 
             The effect can be vertical and/or horizontal, but let's focus on the vertical (the most used one), which requires CSS only.
 
-            .line[]
-
             See a [demo with parallax scrolling](https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm) and a [demo without it](https://www.w3schools.com/howto/tryhow_css_parallax_demo_none.htm).
 
             You can create mind blowing parallax effects using additionnal JavaScript libraries.
@@ -679,19 +712,20 @@
             /* Bootstrap frontend framework breakpoints */
 
             /* Extra small devices (portrait phones) */
-            @media screen and (max-width: 575px) { /* code */ }
+            /* code */
 
             /* Small devices (landscape phones) */
-            @media screen and (max-width: 767px) { /* code */ }
+            @media screen and (min-width: 768px) { /* code */ }
 
             /* Medium devices (tablets) */
-            @media screen and (max-width: 991px) { /* code */ }
+            @media screen and (min-width: 992px) { /* code */ }
 
             /* Large devices (desktops) */
-            @media screen and (max-width: 1199px) { /* code */ }
+            @media screen and (min-width: 1200px) { /* code */ }
 
             /* Extra large devices (large desktops) */
             @media screen and (min-width: 1200px) { /* code */ }
+            ```
             ```
             ]
 
@@ -733,12 +767,23 @@
 
             class: content
             .highlight[]
+            ## Avoiding div soup
+            .line[]
+
+            .image-center[
+            ![HTML 5 Flow chart](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
             ## Naming
             .subtitle[Use an explicit convention]
             .line[]
 
             .image-right[
-            ![BEM](https://blogeduonix-2f3a.kxcdn.com/wp-content/uploads/2018/08/bem.jpeg)
+            ![BEM](../images/bem.png)
             ]
 
             For example, the *BEM* methodology:
@@ -984,7 +1029,7 @@
             .line[]
 
             .col[
-            * Use a framework like **Bootstrap**, **Materialize** or **Bulma** ...
+            * Use a framework like **Bootstrap**, **Angular Material**, **Vuetify** or **Bulma** ...
 
             .line[]
             .line[]
@@ -993,17 +1038,20 @@
             ![Bootstrap](https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png)
             ]
             .image-mini[
-            ![Materialize](https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png)
+            ![Angular Material](https://repository-images.githubusercontent.com/220078160/9353b600-0e54-11ea-9712-b79b66b93c00)
             ]
             .image-mini[
-            ![Bulma](https://bulma.io/images/bulma-logo.png)
+            ![Vuetify](https://iconape.com/wp-content/png_logo_vector/vuetify.png)
+            ]
+            .image-mini[
+            ![Bulma](https://seeklogo.com/images/B/bulma-logo-45B5145BF4-seeklogo.com.png)
             ]
             ]
 
             .col[
             * Use dynamic language like **SASS** or **LESS**
 
-            * Use a task runner like **Webpack** to *minify* and *uglify* the outputs
+            * Use a task runner like **Webpack** or **ViteJS** to *minify* and *uglify* the outputs
 
             .line[]
 
@@ -1014,9 +1062,44 @@
             ![LESS](http://lesscss.org/public/img/less_logo.png)
             ]
             .image-mini[
-            ![Webpack](https://i0.wp.com/blog.js-republic.com/wp-content/uploads/2018/02/logo-webpack.png)
+            ![Webpack](https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png)
+            ]
+            .image-mini[
+            ![ViteJS](https://camo.githubusercontent.com/61e102d7c605ff91efedb9d7e47c1c4a07cef59d3e1da202fd74f4772122ca4e/68747470733a2f2f766974656a732e6465762f6c6f676f2e737667)
             ]
             ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Think about code quality
+            .subtitle[use formatters and linters]
+            .line[]
+
+            .col[
+            * Use a formatter like **Prettier**, **PostCSS**...
+
+            .line[]
+
+            .image-mini[
+            ![Prettier](https://cdn.worldvectorlogo.com/logos/prettier-1.svg)
+            ]
+            .image-mini[
+            ![Postcss](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/PostCSS_Logo.svg/1200px-PostCSS_Logo.svg.png)
+            ]
+            ]
+
+            .col[
+            * Use a linter like **Stylelint**
+
+            .line[]
+
+            .image-mini[
+            ![Stylelint](https://cdn.worldvectorlogo.com/logos/stylelint.svg)
+            ]
+            ]
+
             ---
 
             class: content

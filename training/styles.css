@@ -8,6 +8,7 @@
  *
  * OBJECTS
  * Wrappers.............Wrapping and constraining elements.
+ * Header...............Nav header.
  *
  * BASE
  * Headings.............H1–H6 styles.
@@ -23,6 +24,10 @@
 /*------------------------------------*\
   # SETTINGS Global
 \*------------------------------------*/
+
+html {
+    font-size: 14px;
+}
 
 body {
     color: #2d3436;
@@ -46,7 +51,7 @@ nav span:last-child {
 /* Full page mode */
 .remark-slide-scaler {
     box-shadow: none !important;
-    height: 95% !important;
+    height: 100% !important;
     left: 0 !important;
     top: 0 !important;
     transform: none !important;
@@ -54,16 +59,8 @@ nav span:last-child {
 }
 
 .remark-slide-content {
-    padding: 1em 5em;
-}
-
-/* Each type of page has its own style */
-.remark-slide > .cover {
-    vertical-align: middle;
-}
-
-.remark-slide > .content {
-    padding: 3rem 5em;
+    height: 100%;
+    padding: 5rem;
 }
 
 /*------------------------------------*\
@@ -98,6 +95,30 @@ nav span:last-child {
     display: block;
     height: 2rem;
     width: 10rem;
+}
+
+/* ------------------------------------*\
+  # OBJECTS Layout
+\*------------------------------------ */
+
+/* Header */
+
+nav {
+    background-color: #e9edee;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    left: 0;
+    min-height: 55px;
+    padding: 1.5rem 5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav span:last-child {
+    float: right;
 }
 
 /*------------------------------------*\

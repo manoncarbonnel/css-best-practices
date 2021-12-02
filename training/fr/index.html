@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <title>Présentation - Intégration et bonnes pratiques avec les CSS</title>
+        <title>Présentation - Intégration web et bonnes pratiques avec les CSS</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../styles.css" />
     </head>
     <body>
-        <nav>
-            <span>Intégration et bonnes pratiques avec les CSS par <strong>Manon Carbonnel</strong></span>
-            <span style="float: right">2020</span>
-        </nav>
         <textarea id="source">
+            layout: true
+            <nav>
+                <span>Intégration web et bonnes pratiques avec les CSS par <strong>Manon Carbonnel</strong></span>
+                <span style="float: right">2020</span>
+            </nav>
+
+            ---
             class: cover
 
             .highlight[]
-            # Intégration
+            # Intégration web
             .subtitle[Les bonnes pratiques en CSS : organiser proprement l'association HTML 5 et CSS 3]
             .line[]
 
@@ -107,6 +110,7 @@
 
             L'id a le niveau de priorité le plus fort, ensuite c'est la classe puis la balise.
 
+            .col[
             ```css
             p {
                 color: red;
@@ -125,6 +129,29 @@
             }
             ```
             ]
+
+            .col[
+            ```css
+            p {
+                color: red;
+            }
+
+            p {
+                color: blue;
+            }
+
+            .text-muted {
+                color: grey;
+            }
+
+            #id {
+                color: black;
+            }
+            ```
+            ]
+
+            ]
+
 
             ---
 
@@ -463,7 +490,7 @@
 
             Les transitions CSS vous permettent de modifier les valeurs de propriétés en douceur, sur une durée donnée.
 
-            .col [
+            .col[
             Voici les règles disponibles pour les transitions CSS:
             - transition
             - transition-delay
@@ -471,6 +498,8 @@
             - transition-property
             - transition-timing-function
             ]
+
+            .col[
 
             .col[
             Exemple :
@@ -496,6 +525,7 @@
               width: 300px;
             }
             ```
+            ]
             ]
 
             ---
@@ -527,12 +557,16 @@
             ]
 
             .col[
+
+            .col[
             Example:
 
             ```html
             <div></div>
             ```
+            ]
 
+            .col[
             ```css
             div {
               background-color: red;
@@ -551,6 +585,7 @@
               100% { background-color: green; }
             }
             ```
+            ]
             ]
 
             ---
@@ -615,8 +650,6 @@
 
             L'effet peut être vertical et/ou horizontal, mais concentrons-nous sur le vertical (le plus utilisé), qui ne nécessite que du CSS.
 
-            .line[]
-
             Voir une [démo avec défilement parallaxe](https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm) et une [démo sans](https://www.w3schools.com/howto/tryhow_css_parallax_demo_none.htm).
 
             Vous pouvez créer des effets de parallaxe époustouflants en utilisant des librairies JavaScript supplémentaires.
@@ -669,7 +702,7 @@
             .col[
             ```html
             <head>
-                <!-- Give the browser instructions about the page's dimensions and scaling. -->
+                <!-- Give the browser instructions on page's dimensions and scaling. -->
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
             </head>
             ```
@@ -680,16 +713,16 @@
             /* Bootstrap frontend framework breakpoints */
 
             /* Extra small devices (portrait phones) */
-            @media screen and (max-width: 575px) { /* code */ }
+            /* code */
 
             /* Small devices (landscape phones) */
-            @media screen and (max-width: 767px) { /* code */ }
+            @media screen and (min-width: 768px) { /* code */ }
 
             /* Medium devices (tablets) */
-            @media screen and (max-width: 991px) { /* code */ }
+            @media screen and (min-width: 992px) { /* code */ }
 
             /* Large devices (desktops) */
-            @media screen and (max-width: 1199px) { /* code */ }
+            @media screen and (min-width: 1200px) { /* code */ }
 
             /* Extra large devices (large desktops) */
             @media screen and (min-width: 1200px) { /* code */ }
@@ -712,7 +745,7 @@
             class: content
             .highlight[]
             ## Structure
-            .subtitle[Respecter la hiérarchie HTML5]
+            .subtitle[Respecter la hiérarchie HTML]
             .line[]
 
             .image-right[
@@ -734,12 +767,23 @@
 
             class: content
             .highlight[]
+            ## Eviter la soupe de div
+            .line[]
+
+            .image-center[
+            ![HTML 5 Flow chart](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
+            ]
+
+            ---
+
+            class: content
+            .highlight[]
             ## Nommage
             .subtitle[Utiliser une convention explicite]
             .line[]
 
             .image-right[
-            ![BEM](https://blogeduonix-2f3a.kxcdn.com/wp-content/uploads/2018/08/bem.jpeg)
+            ![BEM](../images/bem.png)
             ]
 
             Par exemple, la méthodologie *BEM* :
@@ -948,7 +992,7 @@
              * Illustration.........The main illustration.
              * Form.................The main page form.
              *
-             * TRUMPS
+             * MISC
              * Buttons..............Button elements.
              * Icons................Icon elements.
              */
@@ -985,7 +1029,7 @@
             .line[]
 
             .col[
-            * Utiliser un framework comme **Bootstrap**, **Materialize** ou encore **Bulma**...
+            * Utiliser un framework comme **Bootstrap**, **Angular Material**, **Vuetify** ou encore **Bulma**...
 
             .line[]
             .line[]
@@ -994,17 +1038,20 @@
             ![Bootstrap](https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png)
             ]
             .image-mini[
-            ![Materialize](https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png)
+            ![Angular Material](https://repository-images.githubusercontent.com/220078160/9353b600-0e54-11ea-9712-b79b66b93c00)
             ]
             .image-mini[
-            ![Bulma](https://bulma.io/images/bulma-logo.png)
+            ![Vuetify](https://iconape.com/wp-content/png_logo_vector/vuetify.png)
+            ]
+            .image-mini[
+            ![Bulma](https://seeklogo.com/images/B/bulma-logo-45B5145BF4-seeklogo.com.png)
             ]
             ]
 
             .col[
             * Utiliser un langage dynamique comme **SASS** ou **LESS**
 
-            * Utiliser un task runner comme **Webpack** pour *minifier* et *uglifier* les sorties
+            * Utiliser un task runner comme **Webpack** ou **ViteJS** pour *minifier* et *uglifier* les sorties
 
             .line[]
 
@@ -1015,9 +1062,44 @@
             ![LESS](http://lesscss.org/public/img/less_logo.png)
             ]
             .image-mini[
-            ![Webpack](https://i0.wp.com/blog.js-republic.com/wp-content/uploads/2018/02/logo-webpack.png)
+            ![Webpack](https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png)
+            ]
+            .image-mini[
+            ![ViteJS](https://camo.githubusercontent.com/61e102d7c605ff91efedb9d7e47c1c4a07cef59d3e1da202fd74f4772122ca4e/68747470733a2f2f766974656a732e6465762f6c6f676f2e737667)
             ]
             ]
+
+            ---
+
+            class: content
+            .highlight[]
+            ## Penser à la qualité de code
+            .subtitle[avec un formatter et un linter]
+            .line[]
+
+            .col[
+            * Utiliser un formatter comme **Prettier**, **PostCSS**...
+
+            .line[]
+
+            .image-mini[
+            ![Prettier](https://cdn.worldvectorlogo.com/logos/prettier-1.svg)
+            ]
+            .image-mini[
+            ![Postcss](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/PostCSS_Logo.svg/1200px-PostCSS_Logo.svg.png)
+            ]
+            ]
+
+            .col[
+            * Utiliser un linter comme **Stylelint**
+
+            .line[]
+
+            .image-mini[
+            ![Stylelint](https://cdn.worldvectorlogo.com/logos/stylelint.svg)
+            ]
+            ]
+
             ---
 
             class: content
