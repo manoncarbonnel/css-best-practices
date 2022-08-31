@@ -8,7 +8,7 @@
 ![SASS](https://img.shields.io/badge/sass-1.27-CE679A)
 ![HTML 5](https://img.shields.io/badge/html-5-E44D25)
 
-*Presentation - Integration and best practices with preprocessors and frontend frameworks*
+[Presentation - Integration and best practices with preprocessors and frontend frameworks](slides.html)
 
 **Summary**
 
