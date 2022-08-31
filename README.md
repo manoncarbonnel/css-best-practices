@@ -14,3 +14,4 @@ In this repository you will find :
 
 - [Quality tools tutorials](quality-tools-tutorials/README.md)
 - [A training in two parts](training/en/README.md)
+- [A training in two parts - French version](training/fr/README.md)

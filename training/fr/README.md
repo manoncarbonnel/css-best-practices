@@ -6,7 +6,7 @@
 ![CSS 3](https://img.shields.io/badge/css-3-1C73B9)
 ![HTML 5](https://img.shields.io/badge/html-5-E44D25)
 
-*Les bonnes pratiques en CSS : organiser proprement l'association HTML 5 et CSS 3*
+[Les bonnes pratiques en CSS : organiser proprement l'association HTML 5 et CSS 3](slides.html)
 
 **Sommaire**
 
